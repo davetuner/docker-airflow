@@ -85,6 +85,8 @@ RUN echo 'airflow ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 COPY script/entrypoint.sh /entrypoint.sh
 COPY config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
 
+copy script/scheduler_heartbeat_probe.py /scheduler_heartbeat_probe.py
+
 RUN chown -R airflow ${AIRFLOW_HOME}
 
 
